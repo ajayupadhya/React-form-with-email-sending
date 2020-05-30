@@ -9,10 +9,10 @@ export default class Display extends Component {
             <hr />
       <div className = "display">
         <ul class="list-group">
-          <li class="list-group-item active">Name :{name}</li>
-          <li class="list-group-item">Email :{email}</li>
-          <li class="list-group-item">Phone :{phone}</li>
-          <li class="list-group-item"> Message :{message}</li>
+          <li class="list-group-item active">Name :  {name}</li>
+          <li class="list-group-item">Email :  {email}</li>
+          <li class="list-group-item">Phone :  {phone}</li>
+          <li class="list-group-item"> Message :  {message}</li>
         </ul>
       </div>
       </Fragment>
