@@ -18,7 +18,7 @@ export default class LoginScreen extends Component {
 
   sendFeedback(templateId, variables) {
     window.emailjs
-      .send("ajaykumarupadhyay804_gmail_com", templateId, variables)
+      .send("service id", templateId, variables)
       .then((res) => {
         console.log("Email successfully sent!");
       })
@@ -50,15 +50,15 @@ export default class LoginScreen extends Component {
                   <h4
                     className="btn btn-primary"
                     onClick={() => {
-                      const templateId = "template_X3uyPHeD";
+                      const templateId = "template_id";
 
                       this.sendFeedback(templateId, {
                         message_html:
                           "Thanks for reaching us, allow us 48 hours to get back to you.",
                         from_name: "Serve India Consultancy",
-                        to_email: "forcodingchallenge@gmail.com",
-                        to_name: item.name,
-                        from_email : "ajaykumarupadhyay804@gmail.com"
+                        to_email: item.email,
+                        to_name: item.name
+                    
                       });
                     }}
                   >
