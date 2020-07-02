@@ -57,13 +57,7 @@ export default class LoginScreen extends Component {
                           "Thanks for reaching us, allow us 48 hours to get back to you.",
                         from_name: "Serve India Consultancy",
                         to_email: item.email,
-<<<<<<< HEAD
                         to_name: item.name,
-                        
-=======
-                        to_name: item.name
-                    
->>>>>>> 534a735e3f105156eb814402a9f4396006c2c8f4
                       });
                     }}
                   >
