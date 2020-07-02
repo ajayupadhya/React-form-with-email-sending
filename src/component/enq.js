@@ -3,7 +3,7 @@ import Nav from "./nav";
 import Display from "./display";
 
 const validEmailRegex = RegExp(
-  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 );
 const validateForm = (errors) => {
   let valid = true;
@@ -32,7 +32,6 @@ class Enquiry extends Component {
     let errors = this.state.errors;
 
     switch (name) {
-  
       case "email":
         errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
         break;
@@ -76,7 +75,7 @@ class Enquiry extends Component {
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input
-                required
+                  required
                   type="text"
                   className="form-control"
                   id="name"
@@ -134,7 +133,9 @@ class Enquiry extends Component {
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>
-              {validateForm(this.state.errors) !== true ? <div>Please Enter All Field</div> : null}
+              {validateForm(this.state.errors) !== true ? (
+                <div>Please Enter All Field</div>
+              ) : null}
             </form>
           </div>
         ) : (

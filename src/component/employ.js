@@ -1,20 +1,15 @@
 import React, { Component } from "react";
 import Nav from "./nav";
 import Logo from "../photo/signin.png";
-import { Redirect, Link } from "react-router-dom";
-import { validateAll } from 'indicative';
+import { Redirect } from "react-router-dom";
+
 const validEmailRegex = RegExp(
-  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 );
-const validateForm = (errors) => {
-  let valid = true;
-  Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
-  return valid;
-};
 export default class Employ extends Component {
   constructor(props) {
     super(props);
-    let looggedin = false
+
     this.state = {
       email: null,
       password: null,
@@ -48,30 +43,27 @@ export default class Employ extends Component {
   };
 
   handleSubmit = () => {
-    
     let email = this.state.email;
-    let password = this.state.password
-    console.log(email)
-    console.log(password)
-    if(email === "ajay@gmail.com" && password === "123456789"){
-      this.setState({looggedin : true})
-    } 
-    else 
-    return console.log("failed")
-  }
+    let password = this.state.password;
+    console.log(email);
+    console.log(password);
+    if (email === "ajay@gmail.com" && password === "123456789") {
+      this.setState({ looggedin: true });
+    } else return console.log("failed");
+  };
 
   render() {
     const { errors } = this.state;
-    if(this.state.looggedin){
-      localStorage.setItem("token" , "ajaykumarupadhyay")
-      return <Redirect to = "/employ" />
+    if (this.state.looggedin) {
+      localStorage.setItem("token", "ajaykumarupadhyay");
+      return <Redirect to="/employ" />;
     }
     return (
       <div>
         <Nav />
         <img className="logo" src={Logo} alt="website logo" />
         <div className="signin">
-          <form >
+          <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
@@ -108,12 +100,15 @@ export default class Employ extends Component {
               <small>Password must be eight characters in length.</small>
             </div>
 
-            <button type="button"  onClick = {this.handleSubmit}  class="btn btn-primary btn-to">
+            <button
+              type="button"
+              onClick={this.handleSubmit}
+              class="btn btn-primary btn-to"
+            >
               Submit
             </button>
           </form>
         </div>
-      
       </div>
     );
   }
