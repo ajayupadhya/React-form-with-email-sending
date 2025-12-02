@@ -9,7 +9,7 @@
     "bootstrap": "^4.5.0",
     "emailjs": "^3.0.0",
     "indicative": "^7.4.4",
-    "nodemailer": "^6.4.8",
+    "nodemailer": "^7.0.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
